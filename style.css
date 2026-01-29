@@ -1,0 +1,160 @@
+:root {
+    --bg: #0a0a0a;
+    --accent: #139393;
+    --text: #ffffff;
+    --text-dim: #b0b0b0;
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Josefin Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 25px 5%;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Jost';
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text);
+    letter-spacing: 2px;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    margin-left: 35px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(10,10,10,0.9) 100%);
+    z-index: 0;
+}
+
+.hero-content { z-index: 1; padding: 0 20px; }
+
+.hero-content h1 {
+    font-family: 'Jost';
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.hero-content p {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.btn-primary {
+    padding: 16px 35px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-family: 'Jost';
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.4s;
+}
+
+.btn-primary:hover {
+    background: white;
+    color: var(--bg);
+}
+
+/* Services */
+.services { padding: 120px 10%; }
+
+.section-title {
+    font-family: 'Jost';
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--glass);
+    padding: 50px;
+    border: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+.card-line {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-family: 'Jost';
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.7;
+                                                                 }
