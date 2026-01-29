@@ -3,7 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DP.Corporation | Production House</title>
+    
+    <!-- SEO PAGRINDAI -->
+    <title>DP.CORPORATION | Premium Visual Production House</title>
+    <meta name="description" content="DP.CORPORATION – aukščiausios kokybės vaizdo turinio gamybos agentūra. Kinematografiniai sprendimai verslui. Įkūrėjas Dominik Šuškevič.">
+    <meta name="author" content="Dominik Šuškevič, Dominikphotofficial">
+    <meta name="robots" content="index, follow">
+    
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://corporation.dominikphotofficial.lt" />
+
+    <!-- OPEN GRAPH (Dalijimuisi Facebook/LinkedIn) -->
+    <meta property="og:title" content="DP.CORPORATION | Visual Production House">
+    <meta property="og:description" content="Profesionalūs vizualiniai sprendimai tavo verslui.">
+    <meta property="og:url" content="https://corporation.dominikphotofficial.lt">
+    <meta property="og:type" content="website">
+
+    <!-- ŠRIFTAI IR STILIUS -->
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -12,10 +28,12 @@
 
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">DP<span>.</span>CORPORATION</a>
+            <a href="index.html" class="logo">DP<span>.</span>CORPORATION</a>
             <div class="nav-links">
-                <a href="#services">Sprendimai</a>
-                <a href="#about">Apie mus</a>
+                <a href="#about">Apie</a>
+                <a href="#paslaugos">Paslaugos</a>
+                <a href="#misija">Misija</a>
+                <a href="#blog">Blog</a>
                 <a href="#contact" class="nav-btn">Kontaktai</a>
             </div>
         </div>
@@ -24,49 +42,66 @@
     <header class="hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="assets/video-bg.mp4" type="video/mp4">
-            <!-- Jei video dar neturi, naudok laikiną: -->
-            <source src="https://interfacemarket.com/storage/65/video-background.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="reveal">CINEMATIC SOLUTIONS</h1>
-            <p class="reveal">Vizualinio turinio gamyba, transformuojanti verslo komunikaciją.</p>
+            <h1 class="reveal">DP.CORPORATION</h1>
+            <p class="reveal">High-End Visual Content Production</p>
             <div class="hero-actions reveal">
-                <a href="#services" class="btn-primary">Mūsų paslaugos</a>
+                <a href="#paslaugos" class="btn-primary">Mūsų sprendimai</a>
             </div>
         </div>
     </header>
 
-    <section id="services" class="services">
+    <!-- SEKCIJA: APIE / MISIJA -->
+    <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title reveal">Ką mes darome</h2>
             <div class="grid">
-                <div class="card reveal">
-                    <div class="card-line"></div>
-                    <h3>Reklamos gamyba</h3>
-                    <p>Nuo koncepcijos iki aukščiausios kokybės TVC lygio produkcijos.</p>
+                <div class="text-block reveal">
+                    <h2 id="misija">Mūsų Misija</h2>
+                    <p>Mes netiesiog filmuojame – mes kuriame vizualinį autoritetą. <strong>DP.CORPORATION</strong> misija yra suteikti verslams įrankius dominuoti rinkoje per estetiškai nepriekaištingą ir strategiškai apgalvotą turinį.</p>
                 </div>
-                <div class="card reveal">
-                    <div class="card-line"></div>
-                    <h3>Verslo įvaizdis</h3>
-                    <p>Strateginiai video sprendimai, kurie didina pasitikėjimą jūsų prekės ženklu.</p>
-                </div>
-                <div class="card reveal">
-                    <div class="card-line"></div>
-                    <h3>Social Media Content</h3>
-                    <p>Dinamiškas, aukštos kokybės turinis, pritaikytas šiuolaikinėms platformoms.</p>
+                <div class="text-block reveal">
+                    <h2>Vizija</h2>
+                    <p>Tapti standartu modernioje verslo komunikacijoje, kur menas susitinka su technologijomis.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- PASLAUGOS -->
+    <section id="paslaugos" class="services">
+        <div class="container">
+            <h2 class="section-title reveal">Paslaugos</h2>
+            <div class="grid">
+                <div class="card reveal"><h3>TVC & Digital Ads</h3></div>
+                <div class="card reveal"><h3>Corporate Image</h3></div>
+                <div class="card reveal"><h3>Social Media Strategy</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKTAI (FOOTER) -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2 class="reveal">Pradėkime kurti</h2>
+            <div class="contact-info reveal">
+                <p>Email: <a href="mailto:DOMINIKPHOTOFFICIAL.LT@GMAIL.COM">DOMINIKPHOTOFFICIAL.LT@GMAIL.COM</a></p>
+                <p>Tel: <a href="tel:+37062337615">+370 623 37615</a></p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DP.CORPORATION. Autorius: Dominik Šuškevič.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
         ScrollReveal().reveal('.reveal', {
-            distance: '50px',
+            distance: '40px',
             duration: 1000,
-            easing: 'cubic-bezier(0.5, 0, 0, 1)',
-            interval: 200
+            interval: 150,
+            origin: 'bottom'
         });
     </script>
 </body>
-</html>
+                </html>
