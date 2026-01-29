@@ -1,30 +1,71 @@
+/* --- KINTAMIEJI (VARIABLES) --- */
 :root {
-    --bg: #0a0a0a;
-    --accent: #139393;
-    --text: #ffffff;
-    --text-dim: #b0b0b0;
-    --glass: rgba(255, 255, 255, 0.03);
+    --color-bg: #0a0a0a;
+    --color-surface: #121212;
+    --color-card: rgba(255, 255, 255, 0.03);
+    --color-accent: #139393;
+    --color-text-main: #ffffff;
+    --color-text-dim: #b0b0b0;
+    --color-border: rgba(255, 255, 255, 0.1);
+    --font-heading: 'Jost', sans-serif;
+    --font-body: 'Josefin Sans', sans-serif;
+    --transition-smooth: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* --- PAGRINDAI --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg);
+}
 
 body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: var(--font-body);
+    color: var(--color-text-main);
+    line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Navigation */
-nav {
+/* --- TEKSTO STILIUS --- */
+.heading-l {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 10vw, 6rem);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 0.9;
+}
+
+.heading-m {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+/* --- NAVIGACIJA --- */
+.navbar {
     position: fixed;
+    top: 0;
     width: 100%;
-    padding: 25px 5%;
-    z-index: 100;
+    z-index: 1000;
+    padding: 2rem 5%;
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
 }
 
-.nav-container {
+.nav-wrapper {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
@@ -33,128 +74,187 @@ nav {
 }
 
 .logo {
-    font-family: 'Jost';
-    font-size: 1.4rem;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
     font-weight: 700;
     text-decoration: none;
-    color: var(--text);
-    letter-spacing: 2px;
+    color: var(--color-text-main);
+    letter-spacing: 3px;
 }
 
-.logo span { color: var(--accent); }
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
 
-.nav-links a {
-    color: var(--text);
+.nav-item {
     text-decoration: none;
-    margin-left: 35px;
-    font-size: 0.85rem;
+    color: var(--color-text-dim);
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
+    letter-spacing: 1.5px;
+    transition: var(--transition-smooth);
 }
 
-.nav-links a:hover { color: var(--accent); }
+.nav-item:hover {
+    color: var(--color-accent);
+}
 
-/* Hero Section */
+/* --- HERO SEKCIJA --- */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    text-align: center;
+    overflow: hidden;
 }
 
 .hero-video {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
+    filter: brightness(0.3) grayscale(0.2);
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(10,10,10,0.9) 100%);
-    z-index: 0;
-}
-
-.hero-content { z-index: 1; padding: 0 20px; }
-
-.hero-content h1 {
-    font-family: 'Jost';
-    font-size: clamp(2.5rem, 8vw, 5.5rem);
-    margin-bottom: 20px;
-    line-height: 1;
-}
-
-.hero-content p {
-    color: var(--text-dim);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 40px;
-}
-
-.btn-primary {
-    padding: 16px 35px;
-    background: var(--accent);
-    color: white;
-    text-decoration: none;
-    font-family: 'Jost';
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: 0.4s;
-}
-
-.btn-primary:hover {
-    background: white;
-    color: var(--bg);
-}
-
-/* Services */
-.services { padding: 120px 10%; }
-
-.section-title {
-    font-family: 'Jost';
-    font-size: 2.5rem;
-    margin-bottom: 60px;
+.hero-content {
     text-align: center;
+    max-width: 900px;
+    padding: 0 20px;
 }
 
-.grid {
+.hero-sub {
+    font-size: 1.2rem;
+    color: var(--color-text-dim);
+    margin: 1.5rem 0 2.5rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* --- KONTEINERIAI IR TINKLELIS --- */
+.section {
+    padding: 120px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
 }
 
+/* --- KORTELĖS (GLASSMORPHISM) --- */
 .card {
-    background: var(--glass);
-    padding: 50px;
-    border: 1px solid rgba(255,255,255,0.05);
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    padding: 3.5rem;
+    transition: var(--transition-smooth);
     position: relative;
-    transition: 0.4s;
 }
 
 .card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-accent);
     transform: translateY(-10px);
-    border-color: var(--accent);
 }
 
-.card-line {
-    width: 40px;
+.card-icon {
+    width: 30px;
     height: 2px;
-    background: var(--accent);
-    margin-bottom: 20px;
+    background: var(--color-accent);
+    margin-bottom: 2rem;
 }
 
-.card h3 {
-    font-family: 'Jost';
-    margin-bottom: 15px;
-    font-size: 1.3rem;
+.card-title {
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
-.card p {
-    color: var(--text-dim);
-    font-size: 0.95rem;
-    line-height: 1.7;
-                                                                 }
+.card-description {
+    color: var(--color-text-dim);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* --- MYGTUKAI --- */
+.btn {
+    padding: 1.2rem 3rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    transition: var(--transition-smooth);
+    border: 1px solid var(--color-accent);
+}
+
+.btn-primary {
+    background: var(--color-accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--color-accent);
+}
+
+/* --- KONTAKTAI IR FOOTER --- */
+.footer {
+    padding: 100px 5% 50px;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+}
+
+.contact-link {
+    display: block;
+    color: var(--color-text-main);
+    text-decoration: none;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-family: var(--font-heading);
+    transition: var(--transition-smooth);
+}
+
+.contact-link:hover {
+    color: var(--color-accent);
+    padding-left: 20px;
+}
+
+.copyright {
+    color: var(--color-text-dim);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.5;
+}
+
+/* --- ANIMACIJŲ PAGALBINĖS KLASĖS --- */
+.reveal {
+    opacity: 0;
+}
+
+/* --- MOBILI VERSIJA --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Paprastumo dėlei paslepiame, reikėtų mobilaus meniu */
+    }
+    
+    .contact-grid {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+}
